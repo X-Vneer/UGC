@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container:{
+        center:true,
+      },
       colors: {
         primary: "#e5ff76",
         secondary: "#1F19E1",
