@@ -8,13 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      container:{
-        center:true,
+      container: {
+        center: true,
+        padding: "2rem",
       },
       colors: {
         primary: "#e5ff76",
         secondary: "#1F19E1",
         customBlack: "#1e1e1e",
+        lightGray: "#7a7a7a",
       },
     },
   },
