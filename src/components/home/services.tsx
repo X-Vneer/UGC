@@ -49,12 +49,12 @@ const Card = ({ content, index }: { content: string; index: number }) => {
 
 const Services = (props: Props) => {
   return (
-    <div className="py-20">
+    <section id="services" className="py-20">
       <div className="container">
         <div className="max-w-xl max-md:text-center">
-          <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">هيا نبدا</h2>
+          <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">خدماتنا</h2>
           <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
-            توظيف السوشل ميدا كما لم يتم
+            ايش الخدمات يلي نقدمها
           </p>
           <p className="text-[#7a7a7a] max-lg:text-sm ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
@@ -77,7 +77,7 @@ const Services = (props: Props) => {
           })}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

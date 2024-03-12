@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -45,29 +44,37 @@ const Header = (props: Props) => {
               className="mt-4 flex flex-col rounded-lg bg-gray-50 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent rtl:space-x-reverse">
               <li>
                 <Link
-                  href="#"
+                  href="/"
                   className="block rounded  px-3 py-2  text-secondary md:bg-transparent md:p-0  "
                   aria-current="page">
                   الرئيسية
                 </Link>
               </li>
+
               <li>
-                <Link
-                  href="#"
-                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
-                  الخدمات
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
+                <a
+                  href="#about-us"
                   className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
                   ايش الUGC
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#why-ugc"
+                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
+                  ليش ال UGC
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
+                  الخدمات
+                </a>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="#contact-us"
                   className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
                   تواصل معنا
                 </Link>

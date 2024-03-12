@@ -8,7 +8,7 @@ type Props = {}
 
 const AboutUs = (props: Props) => {
   return (
-    <div className=" max-md:py-10">
+    <section id="about-us" className=" max-md:py-10">
       <div className="container">
         <div className="flex min-h-screen items-center gap-10 max-md:flex-col-reverse lg:gap-14">
           <div className="relative w-full p-5  md:w-1/2 ">
@@ -63,7 +63,7 @@ const AboutUs = (props: Props) => {
             }}
             className="w-full p-5 max-lg:text-center md:w-1/2">
             <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">
-              هيا نبدا
+              ايش ال UGC
             </h2>
             <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
               يتم توظيف السوشل ميدا كما لم يتم من قبل
@@ -95,7 +95,7 @@ const AboutUs = (props: Props) => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
