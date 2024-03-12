@@ -61,7 +61,7 @@ const AboutUs = (props: Props) => {
               opacity: 1,
               x: 0,
             }}
-            className="w-full p-5 md:w-1/2">
+            className="w-full p-5 max-lg:text-center md:w-1/2">
             <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">
               هيا نبدا
             </h2>
