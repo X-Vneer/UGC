@@ -32,7 +32,7 @@ function Hero({}: Props) {
               delay: 0.2,
               duration: 1,
             }}
-            className="mb-4 text-center  text-sm text-secondary xl:text-lg ">
+            className="mb-4 text-center   text-secondary xl:text-lg ">
             هيا نبدأ
           </motion.p>
           <motion.h1
