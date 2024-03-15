@@ -4,7 +4,6 @@ import { Cairo } from "next/font/google"
 import "./globals.css"
 
 import Footer from "@/components/footer"
-import Header from "@/components/header"
 
 const cairo = Cairo({ subsets: ["latin"], weight: ["400", "500", "700"] })
 
@@ -21,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={cairo.className + " left-0 right-0 top-0 overflow-y-scroll"}>
-        <Header />
         {children}
         <Footer />
       </body>

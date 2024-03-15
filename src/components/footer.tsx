@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import { logo } from "@/assets"
 
 type Props = {}
@@ -8,13 +9,13 @@ const Footer = (props: Props) => {
     <footer className="bg-gray-50">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
-          <div className="flex justify-center gap-2 text-teal-600 sm:justify-start">
-            <span className="self-center whitespace-nowrap text-2xl font-semibold  text-secondary ">
+          <Link className="flex justify-center gap-2  sm:justify-start" href="/">
+            <span className="self-center whitespace-nowrap text-xl font-semibold  text-secondary ">
               UGC
             </span>
 
-            <img src={logo.src} className="h-9" alt="logo" />
-          </div>
+            <img src={logo.src} className="h-8" alt="logo" />
+          </Link>
 
           <p className="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
             Copyright &copy; {new Date().getFullYear()}. All rights reserved.

@@ -12,14 +12,20 @@ function Hero({}: Props) {
     <main className=" min-h-[calc(100vh-64px)] p-4 lg:p-8 lg:px-14">
       <div className="hero-section relative flex h-[calc(100vh-70px)] items-center justify-center overflow-hidden rounded-3xl bg-primary lg:h-[calc(100vh-140px)]">
         <div className=" hero-section-background absolute inset-0"></div>
-        <div className="relative z-[1]  max-w-lg text-center leading-loose xl:max-w-xl">
+        <div
+          style={{
+            perspective: "300px",
+          }}
+          className=" relative  z-[1] max-w-lg text-center leading-loose xl:max-w-xl">
           <motion.p
             initial={{
               y: 15,
               opacity: 0,
+              rotateX: -90,
             }}
             animate={{
               y: 0,
+              rotateX: 0,
               opacity: 1,
             }}
             transition={{
@@ -33,10 +39,12 @@ function Hero({}: Props) {
             initial={{
               y: 15,
               opacity: 0,
+              rotateX: -40,
             }}
             animate={{
               y: 0,
               opacity: 1,
+              rotateX: 0,
             }}
             transition={{
               delay: 0.4,
@@ -49,10 +57,12 @@ function Hero({}: Props) {
             initial={{
               y: 15,
               opacity: 0,
+              rotateX: -40,
             }}
             animate={{
               y: 0,
               opacity: 1,
+              rotateX: 0,
             }}
             transition={{
               delay: 0.9,
@@ -67,10 +77,12 @@ function Hero({}: Props) {
               initial={{
                 y: 15,
                 opacity: 0,
+                rotateX: -40,
               }}
               animate={{
                 y: 0,
                 opacity: 1,
+                rotateX: 0,
               }}
               transition={{
                 delay: 1.1,
@@ -82,10 +94,12 @@ function Hero({}: Props) {
               initial={{
                 y: 15,
                 opacity: 0,
+                rotateX: -40,
               }}
               animate={{
                 y: 0,
                 opacity: 1,
+                rotateX: 0,
               }}
               transition={{
                 delay: 1.2,
