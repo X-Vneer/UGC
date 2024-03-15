@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
+import { logo } from "@/assets"
 
 import { cn } from "@/lib/utils"
 
@@ -85,6 +86,7 @@ const Header = (props: Props) => {
             <span className="self-center whitespace-nowrap text-2xl font-semibold  text-secondary ">
               UGC
             </span>
+            <img src={logo.src} className="h-9" alt="logo" />
           </Link>
         </div>
       </div>

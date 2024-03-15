@@ -1,4 +1,5 @@
 import cornerIcons from "./corner-icons-bg.png"
 import iconsBg from "./icons-background.png"
+import logo from "./logo.png"
 
-export { iconsBg, cornerIcons }
+export { iconsBg, cornerIcons, logo }
