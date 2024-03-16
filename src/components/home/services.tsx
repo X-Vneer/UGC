@@ -2,6 +2,7 @@
 
 import React from "react"
 import { motion } from "framer-motion"
+import { Check } from "lucide-react"
 
 type Props = {}
 
@@ -25,7 +26,9 @@ const Card = ({ content, index }: { content: string; index: number }) => {
           delay: index / 6,
         }}
         className="absolute right-3 top-3  clear-start flex aspect-square items-center justify-center rounded-full bg-primary p-2 text-sm text-customBlack">
-        <span>card</span>
+        <span>
+          <Check />
+        </span>
       </motion.span>
       <motion.p
         initial={{
@@ -52,7 +55,9 @@ const Services = (props: Props) => {
     <section id="services" className="py-20">
       <div className="container">
         <div className="max-w-xl max-md:text-center">
-          <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">خدماتنا</h2>
+          <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">
+            ليه ال UGC
+          </h2>
           <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
             ايش الخدمات يلي نقدمها
           </p>

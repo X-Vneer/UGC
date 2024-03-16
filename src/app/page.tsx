@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <Brands />
       <AboutUs />
-      <WhyUGC />
+      {/* <WhyUGC /> */}
       <Services />
+      <Brands />
     </>
   )
 }

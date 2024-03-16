@@ -62,7 +62,7 @@ const AboutUs = (props: Props) => {
               x: 0,
             }}
             className="w-full p-5 max-lg:text-center md:w-1/2">
-            <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">
+            <h2 className="mb-4  text-[15px] font-bold text-secondary xl:text-lg ">
               ايش ال UGC
             </h2>
             <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
