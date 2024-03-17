@@ -34,6 +34,7 @@ export default function ContactUs() {
   const Router = useRouter()
   const { formData } = useFormContext()
   useEffect(() => {
+    console.log("🚀 ~ ContactUs ~ formData:", formData)
     if (!PersonalDataSchema.safeParse(formData).success) {
       console.log("بيانات غير صحيحة")
       setTimeout(() => {
