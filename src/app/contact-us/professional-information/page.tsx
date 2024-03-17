@@ -20,6 +20,7 @@ export default function ContactUs() {
     formState: { errors, isSubmitting },
     handleSubmit,
     control,
+    register,
   } = useForm<z.infer<typeof BrandInformationSchema>>({
     resolver: zodResolver(BrandInformationSchema),
     defaultValues: {
@@ -43,6 +44,7 @@ export default function ContactUs() {
   }, [Router, formData])
 
   const onSubmit = handleSubmit((data) => {
+    console.log("🚀 ~ onSubmit ~ data:", data)
     updateFormData(data)
     Router.push("/contact-us/service-information")
   })
@@ -92,23 +94,24 @@ export default function ContactUs() {
             )
           }}
         />
-
-        <Controller
-          control={control}
-          name="brandDescription"
-          render={({ field }) => {
-            return (
-              <Input
-                error={errors.brandDescription}
-                placeholder="نبذة مبسطة عن العلامة التجارية"
-                {...field}
-                required
-                label="نبذة مبسطة عن العلامة التجارية"
-              />
-            )
-          }}
-        />
-
+        <div>
+          <label
+            htmlFor="brandDescription"
+            className="block  font-medium text-gray-700">
+            نبذة مبسطة عن العلامة التجارية
+          </label>
+          <textarea
+            {...register("brandDescription")}
+            id="brandDescription"
+            className="mt-2 w-full rounded-lg border-gray-200 align-top shadow-sm sm:text-sm"
+            rows={4}
+            placeholder="نبذة مبسطة عن العلامة التجارية"></textarea>
+          {errors.brandDescription?.message ? (
+            <span className=" text-sm text-red-600">
+              {errors.brandDescription.message}
+            </span>
+          ) : null}
+        </div>
         <Button isLoading={isSubmitting} className="w-full rounded-md" type="submit">
           التالي
         </Button>
