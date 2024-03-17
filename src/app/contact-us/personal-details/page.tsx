@@ -88,7 +88,7 @@ export default function ContactUs() {
             return (
               <Input
                 error={errors.phoneNumber}
-                placeholder="رقم التواصل"
+                placeholder="966 xxx xxx xxx"
                 {...field}
                 required
                 label="رقم التواصل"

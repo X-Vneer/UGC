@@ -55,13 +55,16 @@ export default function ContactUs() {
     console.log("🚀 ~ onSubmit ~ data:", data)
     // updateFormData(data)
     // Router.push("/contact-us/service-information")
+    // TODO handle form submission
   })
 
   return (
     <div>
       <div className="max-md:text-center">
         <h1 className="text-3xl font-semibold  leading-loose">كن ترند الان</h1>
-        <p className=" font-medium text-gray-500">معلوامت العلامة التجارية تهمنا </p>
+        <p className=" font-medium text-gray-500">
+          يمكنك اختيار تفاصيل الخدمة التي تحتاجها{" "}
+        </p>
       </div>
 
       <div className=" my-5">

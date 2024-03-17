@@ -6,7 +6,7 @@ const PersonalDataSchema = z.object({
   phoneNumber: z
     .string()
     .min(1, "رقم التواصل مطلوب")
-    .regex(/^(966)\d{7}$/, "الرجاء استخدام رقم سعودي"),
+    .regex(/^(966)\d{9}$/, "الرجاء استخدام رقم سعودي"),
   email: z.string().email("يرجى كتابة ايميل صحيح"),
 })
 const BrandInformationSchema = z.object({
