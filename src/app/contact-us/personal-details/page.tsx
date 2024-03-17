@@ -29,11 +29,12 @@ export default function ContactUs() {
   })
 
   const { updateFormData } = useFormContext()
-  const navigate = useRouter()
+  const Router = useRouter()
 
   const onSubmit = handleSubmit((data) => {
+    console.log("🚀 ~ onSubmit ~ data:", data)
     updateFormData(data)
-    navigate.push("/contact-us/professional-information")
+    Router.push("/contact-us/professional-information")
   })
 
   return (

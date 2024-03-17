@@ -40,7 +40,7 @@ export default function ContactUs() {
       setTimeout(() => {
         toast.error("بيانات غير صحيحة")
       }, 1)
-      Router.replace("/contact-us/personal-details")
+      Router.push("/contact-us/personal-details")
     }
   }, [Router, formData])
 

@@ -1,11 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import { blogger, logo } from "@/assets"
-
 import { Toaster } from "sonner"
 
 import { FormProvider } from "./context/context"
 
+export const dynamic = "force-dynamic"
 type Props = {
   children: React.ReactNode
 }
