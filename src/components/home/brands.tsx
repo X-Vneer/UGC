@@ -18,7 +18,7 @@ const Brands = (props: Props) => {
           initial={{
             y: 15,
             opacity: 0,
-            rotateX: -90,
+            rotateX: -50,
           }}
           animate={
             isInView
@@ -31,7 +31,7 @@ const Brands = (props: Props) => {
           }
           transition={{
             delay: 0.2,
-            duration: 0.5,
+            duration: 0.4,
           }}
           className="mb-4 text-center  text-secondary xl:text-lg ">
           عملائنا الموثوقين
@@ -39,7 +39,23 @@ const Brands = (props: Props) => {
         <div className="flex items-center justify-center gap-3 max-md:flex-wrap ">
           {bransLogo.map((e, i) => {
             return (
-              <img
+              <motion.img
+                initial={{
+                  y: 25,
+                  opacity: 0,
+                }}
+                animate={
+                  isInView
+                    ? {
+                        y: 0,
+                        opacity: 1,
+                      }
+                    : {}
+                }
+                transition={{
+                  delay: 0.2 + i / 5,
+                  duration: 0.5,
+                }}
                 key={`brand_${i}`}
                 src={e.src}
                 className="aspect-square w-1/6 min-w-[140px] shrink-0  opacity-65 duration-300 hover:opacity-100 "

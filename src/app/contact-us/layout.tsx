@@ -13,9 +13,7 @@ const Layout = ({ children }: Props) => {
         <div className="flex h-full justify-center p-4 lg:gap-32 lg:p-0">
           <div className="h-full w-full lg:w-2/3 ">
             <div className="flex min-h-full  max-lg:justify-center lg:pr-20 ">
-              <Link
-                href={"/"}
-                className="absolute right-2 top-4 flex gap-2  max-lg:-mr-12  max-lg:-mt-2 ">
+              <Link href={"/"} className="absolute right-4 top-4 flex gap-2  ">
                 <span className="self-center whitespace-nowrap text-2xl font-semibold  text-secondary ">
                   UGC
                 </span>
