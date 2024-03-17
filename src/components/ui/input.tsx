@@ -1,9 +1,9 @@
 import React, { InputHTMLAttributes } from "react"
-import { FieldErrors } from "react-hook-form"
+import { FieldError } from "react-hook-form"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string
-  error: FieldErrors<any>
+  error: FieldError | undefined
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(function Input(
@@ -20,10 +20,8 @@ const Input = React.forwardRef<HTMLInputElement, Props>(function Input(
         className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
         {...props}
       />
-      {error?.[props.name!]?.message ? (
-        <span className=" text-sm text-red-600">
-          {error[props.name!]?.message as string}
-        </span>
+      {error?.message ? (
+        <span className=" text-sm text-red-600">{error.message}</span>
       ) : null}
     </div>
   )

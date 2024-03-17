@@ -2,6 +2,10 @@ import React from "react"
 import Link from "next/link"
 import { blogger, logo } from "@/assets"
 
+import { Toaster } from "sonner"
+
+import { FormProvider } from "./context/context"
+
 type Props = {
   children: React.ReactNode
 }
@@ -9,6 +13,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <section className=" min-h-screen">
+      <Toaster />
       <div className="h-full">
         <div className="flex h-full justify-center p-4 lg:gap-32 lg:p-0">
           <div className="h-full w-full lg:w-2/3 ">
@@ -20,7 +25,7 @@ const Layout = ({ children }: Props) => {
                 <img src={logo.src} className="h-9" alt="logo" />
               </Link>
               <div className="w-full max-w-[650px] pb-10  pt-24 lg:pt-40">
-                {children}
+                <FormProvider>{children}</FormProvider>
               </div>
             </div>
           </div>
