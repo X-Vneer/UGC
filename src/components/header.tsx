@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { logo } from "@/assets"
 
 import { cn } from "@/lib/utils"
@@ -16,6 +17,7 @@ const Header = (props: Props) => {
   useEffect(() => {
     document.body.style.position = open ? "fixed" : ""
   }, [open])
+  const pathname = usePathname()
   return (
     <nav className="border-gray-200 bg-gray-50 ">
       <div className="container">
@@ -46,7 +48,12 @@ const Header = (props: Props) => {
               <li>
                 <Link
                   href="/"
-                  className="block rounded  px-3 py-2  text-secondary md:bg-transparent md:p-0  "
+                  className={cn(
+                    "block rounded  px-3 py-2  text-secondary md:bg-transparent md:p-0  ",
+                    pathname === "/"
+                      ? "text-secondary md:bg-transparent"
+                      : "text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700",
+                  )}
                   aria-current="page">
                   الرئيسية
                 </Link>
@@ -65,6 +72,18 @@ const Header = (props: Props) => {
                   className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
                   خدماتنا
                 </a>
+              </li>
+              <li>
+                <Link
+                  href="/our-work"
+                  className={cn(
+                    "block rounded  px-3 py-2  text-secondary md:bg-transparent md:p-0  ",
+                    pathname === "/our-work"
+                      ? "text-secondary md:bg-transparent"
+                      : "text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700",
+                  )}>
+                  أعمالنا
+                </Link>
               </li>
               <li>
                 <Link

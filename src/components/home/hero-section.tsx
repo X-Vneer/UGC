@@ -109,7 +109,7 @@ function Hero({}: Props) {
                 duration: 1,
               }}>
               <Button variant={"outline"}>
-                <Link href={"/services"}>أعمالنا</Link>
+                <Link href={"/our-work"}>أعمالنا</Link>
               </Button>
             </motion.div>
           </div>
