@@ -5,6 +5,14 @@ import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
 type Props = {}
+const services = [
+  "دراسة وتحليل العلامة التجارية حيث نعمل على تقديم المقترحات الاستراتيجية التي تتناسب مع أهداف العلامة التجارية ودراستها بعمق لتحقيق النتائج المرجوة.",
+  " البحث عن واختيار المبدعين في صناعة المحتوى الذين يتناسبون مع روح وقيم العلامة التجارية لضمان الجودة والتأثير الأمثل.",
+  "توليد أفكار محتوى مبتكرة وكتابتها بما يتوافق مع أهداف العلامة التجارية، لضمان التواصل الفعّال مع الجمهور المستهدف.",
+  "إنتاج محتوى مرئي ومكتوب يتوافق مع خوارزميات المنصات الرقمية المستهدفة لزيادة الوصول والتفاعل.",
+  "تقديم استراتيجيات جذب (Hooks) حيث نطوير ونقديم مجموعة من الاستراتيجيات والأساليب الجاذبة التي تساعد في قياس النتائج وتحسين الأداء التسويقي.",
+  " تخطيط وتنفيذ حملات تسويقية تعتمد على المحتوى المُنتَج من قِبل المستخدمين(UGC)، لتعزيز المصداقية وتوسيع نطاق الانتشار بشكل فعّال.",
+]
 
 const Card = ({ content, index }: { content: string; index: number }) => {
   return (
@@ -55,30 +63,19 @@ const Services = (props: Props) => {
     <section id="services" className="py-20">
       <div className="container">
         <div className="max-w-xl max-md:text-center">
-          <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">
-            ليه ال UGC
-          </h2>
+          <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">خدماتنا</h2>
           <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
             ايش الخدمات يلي نقدمها
           </p>
-          <p className="text-[#7a7a7a] max-lg:text-sm ">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            cursus, libero lacinia mattis cursus, justo massa bibendum orci, in
-            ultrices nunc massa sed erat. Aenean blandit erat at lectus viverra
-            facilisis.
+          <p className="text-[#7a7a7a] lg:text-lg ">
+            هذه الخدمات تشكل مجموعة متكاملة تهدف إلى تعزيز الهوية التجارية وتحقيق
+            التفاعل الأمثل مع الجمهور المستهدف من خلال استراتيجيات محتوى مدروسة
+            ومبتكرة.
           </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-          {new Array(6).fill("").map((e, i) => {
-            return (
-              <Card
-                key={`Card_${i}`}
-                index={i}
-                content={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabiturcursus, libero lacinia mattis cursus, justo massa bibendum orci, inultrices nunc"
-                }
-              />
-            )
+          {services.map((e, i) => {
+            return <Card key={`Card_${i}`} index={i} content={e} />
           })}
         </div>
       </div>

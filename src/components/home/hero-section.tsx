@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 
 import { Button } from "../ui/button"
@@ -51,7 +52,7 @@ function Hero({}: Props) {
               duration: 1,
             }}
             className=" mb-8 text-[24px] font-bold leading-relaxed text-customBlack lg:text-[36px] xl:text-[48px]">
-            الاستفادة من قوة وسائل التواصل الاجتماعي
+            المنصة الاولى لصناع محتوى UGC
           </motion.h1>
           <motion.p
             initial={{
@@ -68,9 +69,9 @@ function Hero({}: Props) {
               delay: 0.9,
               duration: 1,
             }}
-            className="mb-5 text-[#7a7a7a] max-lg:text-[15px]">
-            هذا نص تجريبي يجب استبداله بنص خصا ذو معنى يهدف الى ايضاح الفكرة العامة
-            من هذا النص
+            className="mb-5 text-[#7a7a7a] max-lg:text-[15px] lg:text-lg">
+            إذا تدور عن صناع محتوى مبدعين لتصوير الإعلانات او أفكار ابداعية لإدارة
+            حملتك الإعلانية إنت وصلت!
           </motion.p>
           <div className="flex items-center  justify-center gap-4">
             <motion.div
@@ -88,7 +89,9 @@ function Hero({}: Props) {
                 delay: 1.1,
                 duration: 1,
               }}>
-              <Button>نص تجريبي</Button>
+              <Button>
+                <Link href={"/contact-us"}>تواصل معنا</Link>
+              </Button>
             </motion.div>
             <motion.div
               initial={{
@@ -105,7 +108,9 @@ function Hero({}: Props) {
                 delay: 1.2,
                 duration: 1,
               }}>
-              <Button variant={"outline"}>نص تجريبي</Button>
+              <Button variant={"outline"}>
+                <Link href={"/services"}>أعمالنا</Link>
+              </Button>
             </motion.div>
           </div>
         </div>

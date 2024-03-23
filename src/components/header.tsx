@@ -61,18 +61,11 @@ const Header = (props: Props) => {
               </li>
               <li>
                 <a
-                  href="#why-ugc"
-                  className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
-                  ليه ال UGC
-                </a>
-              </li>
-              {/* <li>
-                <a
                   href="#services"
                   className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
-                  الخدمات
+                  خدماتنا
                 </a>
-              </li> */}
+              </li>
               <li>
                 <Link
                   href="/contact-us"
