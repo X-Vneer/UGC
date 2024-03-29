@@ -65,7 +65,7 @@ const Services = (props: Props) => {
         <div className="max-w-xl max-md:text-center">
           <h2 className="mb-4  text-[15px] text-secondary xl:text-lg ">خدماتنا</h2>
           <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
-            ايش الخدمات يلي نقدمها
+            خدماتنا
           </p>
           <p className="text-[#7a7a7a] lg:text-lg ">
             هذه الخدمات تشكل مجموعة متكاملة تهدف إلى تعزيز الهوية التجارية وتحقيق

@@ -34,7 +34,7 @@ const Brands = (props: Props) => {
             duration: 0.4,
           }}
           className="mb-4 text-center  text-secondary xl:text-lg ">
-          عملائنا الموثوقين
+          عملائنا
         </motion.p>
         <div className="flex items-center justify-center gap-3 max-md:flex-wrap ">
           {bransLogo.map((e, i) => {

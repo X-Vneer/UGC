@@ -29,6 +29,7 @@ export default function ContactUs() {
   } = useForm<z.infer<typeof ServiceInformationSchema>>({
     resolver: zodResolver(ServiceInformationSchema),
     defaultValues: {
+      videosType: "ugc",
       serviceType: "campaign",
       numberOfVideos: "15",
       contentCreatorSex: "male",
@@ -77,6 +78,37 @@ export default function ContactUs() {
       <form onSubmit={onSubmit} className="mt-5 space-y-5" noValidate>
         <p className="mb-2  font-medium text-gray-700">نوع الخدمة</p>
 
+        <fieldset className="grid grid-cols-2 gap-4">
+          <legend className="sr-only">نوع الخدمة</legend>
+          <div>
+            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+              <div>
+                <p className="text-sm text-gray-700">فيدهات UGC</p>
+              </div>
+
+              <input
+                type="radio"
+                {...register("videosType")}
+                value="ugc"
+                className="size-4 border-gray-300 text-secondary"
+              />
+            </label>
+          </div>
+          <div>
+            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+              <div>
+                <p className="text-sm text-gray-700">موديلز</p>
+              </div>
+
+              <input
+                type="radio"
+                {...register("videosType")}
+                value="models"
+                className="size-4 border-gray-300 text-secondary"
+              />
+            </label>
+          </div>
+        </fieldset>
         <fieldset className="grid grid-cols-2 gap-4">
           <legend className="sr-only">نوع الحملة</legend>
           <div>
@@ -170,21 +202,23 @@ export default function ContactUs() {
         {errors.serviceType?.message ? (
           <span className=" text-sm text-red-600">{errors.serviceType.message}</span>
         ) : null}
-        <Controller
-          control={control}
-          name="likedVideo"
-          render={({ field }) => {
-            return (
-              <Input
-                error={errors.likedVideo}
-                placeholder="رابط لفديو اعجبك"
-                {...field}
-                required
-                label="رابط لفديو اعجبك"
-              />
-            )
-          }}
-        />
+        {watch("videosType") === "ugc" ? (
+          <Controller
+            control={control}
+            name="likedVideo"
+            render={({ field }) => {
+              return (
+                <Input
+                  error={errors.likedVideo}
+                  placeholder="رابط لفديو اعجبك"
+                  {...field}
+                  required
+                  label="رابط لفديو اعجبك"
+                />
+              )
+            }}
+          />
+        ) : null}
 
         <div>
           <p className="mb-2 font-medium text-gray-700">جنس صانع المحتوى</p>

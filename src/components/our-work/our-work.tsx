@@ -3,18 +3,13 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-type Props = {}
+type Props = {
+  videos: string[]
+  title: string
+  subTitle: string
+}
 
-const OurWork = (props: Props) => {
-  const videos = [
-    "/video1.mp4",
-    "/video2.mp4",
-    "/video3.mp4",
-    "/video4.mp4",
-    "/video5.mp4",
-    "/video6.mp4",
-    "/video7.mp4",
-  ]
+const OurWork = ({ videos, title, subTitle }: Props) => {
   return (
     <section className="min-h-screen py-10 text-center lg:py-20">
       <motion.p
@@ -33,7 +28,7 @@ const OurWork = (props: Props) => {
           duration: 1,
         }}
         className="mb-4 text-center   text-secondary xl:text-lg ">
-        أعمالنا
+        {title}
       </motion.p>
       <motion.p
         initial={{
@@ -51,7 +46,7 @@ const OurWork = (props: Props) => {
           duration: 1,
         }}
         className=" mb-8 text-[24px] font-bold  leading-relaxed text-customBlack lg:text-[36px] xl:text-[48px]">
-        نماذج متنوعة من أعمالنا
+        {subTitle}
       </motion.p>
       <div className="flex flex-wrap justify-center   gap-6 px-4 ">
         {videos.map((video, index) => {

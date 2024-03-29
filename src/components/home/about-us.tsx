@@ -76,7 +76,7 @@ const AboutUs = (props: Props) => {
               ايش ال UGC
             </h2>
             <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
-              الـugc إختصار جملة User generated content
+              User generated content
             </p>
             <p className="text-[#7a7a7a] lg:text-lg">
               وهو أحدث أنواع التسويق بالمحتوى وهو المحتوى الحقيقي المصنوع من األشخاص
@@ -86,7 +86,9 @@ const AboutUs = (props: Props) => {
             <div className=" mt-8 grid grid-cols-2 gap-y-3  text-center">
               <div>
                 <p>ليه تحتاج الـUGC لعالمتك التجارية ؟</p>
-                <span className="block   text-xl text-customBlack">93%</span>
+                <span className="block   text-3xl font-bold  text-customBlack ">
+                  93%
+                </span>
                 <span className="text-sm text-[#7a7a7a]">
                   من المبيعات
                   <br />
@@ -95,7 +97,9 @@ const AboutUs = (props: Props) => {
               </div>
               <div>
                 <p>الإعلانات التقليدية vs محتوى UGC</p>
-                <span className="block   text-xl text-customBlack">9.8%</span>
+                <span className="block   text-3xl font-bold   text-customBlack">
+                  9.8%
+                </span>
                 <span className="text-sm text-[#7a7a7a]">
                   محتوى UGC
                   <br />

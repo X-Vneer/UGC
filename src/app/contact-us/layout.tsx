@@ -42,23 +42,7 @@ const Layout = ({ children }: Props) => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <div className="absolute inset-x-0 h-full overflow-hidden">
-              <span className="absolute right-[34%] top-[3%] block aspect-square w-10 rounded-full border  border-secondary  "></span>
-              <span className="absolute right-[42%] top-[12%] block aspect-square w-6 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[73%] top-[8%] block aspect-square w-14 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[31%] top-[32%] block aspect-square w-10 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[75%] top-[34%] block aspect-square w-8 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[36%] top-[67%] block aspect-square w-8 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[77%] top-[43%] block aspect-square w-5 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[55%] top-[10%] block aspect-square w-14 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[45%] top-[76%] block aspect-square w-16 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[90%] top-[45%] block aspect-square w-12 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[50%] top-[65%] block aspect-square w-20 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[68%] top-[80%] block aspect-square w-4 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[40%] top-[48%] block aspect-square w-14 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[80%] top-[90%] block aspect-square w-12 rounded-full border border-secondary  "></span>
-              <span className="absolute right-[39%] top-[87%] block aspect-square w-16 rounded-full border border-secondary  "></span>
-            </div>
+            <div className="absolute inset-x-0 h-full overflow-hidden"></div>
           </div>
         </div>
       </div>

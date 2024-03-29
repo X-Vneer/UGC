@@ -17,9 +17,10 @@ const BrandInformationSchema = z.object({
 
 const ServiceInformationSchema = z
   .object({
+    videosType: z.enum(["ugc", "models"]),
     serviceType: z.enum(["campaign", "video"]),
     numberOfVideos: z.enum(["15", "20", "30", "more"]).optional(),
-    likedVideo: z.string().url("رابط غير صالح"),
+    likedVideo: z.string().optional(),
     videoType: z.enum(["homemade", "liveCoverage"]),
     contentCreatorSex: z.enum(["male", "female", "both"]),
   })
@@ -33,6 +34,18 @@ const ServiceInformationSchema = z
     {
       message: "يرجى اختيار عدد الفديوهات المطلوبة",
       path: ["numberOfVideos"],
+    },
+  )
+  .refine(
+    (obj) => {
+      if (obj.videosType === "ugc") {
+        return z.string().url().safeParse(obj.likedVideo).success
+      }
+      return true
+    },
+    {
+      message: " !رابط غير صالح",
+      path: ["likedVideo"],
     },
   )
 
