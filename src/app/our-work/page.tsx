@@ -14,6 +14,10 @@ const Page = (props: Props) => {
     "/video4.mp4",
     "/video5.mp4",
     "/video6.mp4",
+    "/models1.mp4",
+    "/models2.mp4",
+    "/models3.mp4",
+    "/models4.mp4",
   ]
   return (
     <>

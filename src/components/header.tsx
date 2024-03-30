@@ -85,18 +85,7 @@ const Header = (props: Props) => {
                   أعمالنا
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/models"
-                  className={cn(
-                    "block rounded  px-3 py-2  text-secondary md:bg-transparent md:p-0  ",
-                    pathname === "/models"
-                      ? "text-secondary md:bg-transparent"
-                      : "text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700",
-                  )}>
-                  الموديلز
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/contact-us"
