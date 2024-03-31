@@ -37,25 +37,10 @@ const AboutUs = (props: Props) => {
                   loop
                   className=" h-full w-full object-cover"
                   preload="none">
-                  <source src="/video3.mp4" type="video/mp4" />
+                  <source src="/VID-20240330-WA0003.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </motion.div>
-              <motion.img
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{
-                  delay: 0.3,
-                  scale: {
-                    delay: 0.35,
-                    type: "spring",
-                    stiffness: 100,
-                  },
-                }}
-                src={cornerIcons.src}
-                alt="background"
-                className=" absolute  -bottom-8 -left-5 w-1/2  "
-              />
             </div>
           </div>
           <motion.div

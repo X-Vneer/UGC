@@ -38,7 +38,7 @@ const Layout = ({ children }: Props) => {
                 loop
                 className=" h-full w-full object-cover"
                 preload="none">
-                <source src="/video3.mp4" type="video/mp4" />
+                <source src="/VID-20240330-WA0003.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
