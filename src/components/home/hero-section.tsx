@@ -1,7 +1,9 @@
 "use client"
 
 import React from "react"
+import Image from "next/image"
 import Link from "next/link"
+import { logo } from "@/assets"
 import { motion } from "framer-motion"
 
 import { Button } from "../ui/button"
@@ -34,7 +36,7 @@ function Hero({}: Props) {
               duration: 1,
             }}
             className="mb-4 text-center   text-secondary xl:text-lg ">
-            هيا نبدأ
+            <Image src={logo} alt="logo" className="mx-auto w-10" />
           </motion.p>
           <motion.h1
             initial={{
@@ -90,7 +92,7 @@ function Hero({}: Props) {
                 duration: 1,
               }}>
               <Button>
-                <Link href={"/contact-us"}>تواصل معنا</Link>
+                <Link href={"/contact-us"}>اطلب خدمتك</Link>
               </Button>
             </motion.div>
             <motion.div

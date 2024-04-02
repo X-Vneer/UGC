@@ -85,13 +85,15 @@ export default function ContactUs() {
           name="brandField"
           render={({ field }) => {
             return (
-              <Input
-                error={errors.brandField}
-                placeholder="مجال العلامة التحارية"
-                {...field}
-                required
-                label="مجال العلامة التحارية"
-              />
+              <>
+                <Input
+                  error={errors.brandField}
+                  placeholder="مجال العلامة التحارية"
+                  {...field}
+                  required
+                  label="مجال العلامة التحارية"
+                />
+              </>
             )
           }}
         />
@@ -101,6 +103,10 @@ export default function ContactUs() {
             className="block  font-medium text-gray-700">
             نبذة مبسطة عن العلامة التجارية
           </label>
+          <span className="text-[12px]  text-gray-500">
+            الرجاء كتابة نبذة مختصرة لا تقل عن 100 حرف
+          </span>
+
           <textarea
             {...register("brandDescription")}
             id="brandDescription"

@@ -17,10 +17,7 @@ const Layout = ({ children }: Props) => {
       <div className="h-full">
         <div className="flex h-full items-center justify-center p-4 lg:gap-32 lg:p-0">
           <Link href={"/"} className="absolute right-4 top-4 flex gap-2  ">
-            <span className="self-center whitespace-nowrap text-2xl font-semibold  text-secondary ">
-              UGC
-            </span>
-            <img src={logo.src} className="h-9" alt="logo" />
+            <img src={logo.src} className="h-10" alt="logo" />
           </Link>
           <div className=" w-full lg:w-2/3 ">
             <div className="flex  max-lg:justify-center lg:pr-20 ">
