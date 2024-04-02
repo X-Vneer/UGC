@@ -61,14 +61,14 @@ const Header = (props: Props) => {
 
               <li>
                 <a
-                  href="#about-us"
+                  href="/#about-us"
                   className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
                   ايش الUGC
                 </a>
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="/#services"
                   className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 ">
                   خدماتنا
                 </a>
@@ -96,10 +96,7 @@ const Header = (props: Props) => {
             </ul>
           </div>
           <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <span className="self-center whitespace-nowrap text-2xl font-semibold  text-secondary ">
-              UGC
-            </span>
-            <img src={logo.src} className="h-9" alt="logo" />
+            <img src={logo.src} className="h-10" alt="logo" />
           </Link>
         </div>
       </div>

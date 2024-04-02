@@ -40,8 +40,8 @@ export default function ContactUs() {
   return (
     <div>
       <div className="max-md:text-center">
-        <h1 className="text-3xl font-semibold  leading-loose">كن ترند الان</h1>
-        <p className=" font-medium text-gray-500">معلوامات الاسم والتواصل</p>
+        <h1 className="text-3xl font-semibold  leading-loose">خليك ترند</h1>
+        <p className=" font-medium text-gray-500">معلوامات الاسم و التواصل</p>
       </div>
 
       <div className=" my-5">

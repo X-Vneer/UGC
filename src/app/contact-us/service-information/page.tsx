@@ -83,7 +83,7 @@ export default function ContactUs() {
           <div>
             <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
               <div>
-                <p className="text-sm text-gray-700">فيدهات UGC</p>
+                <p className="text-sm text-gray-700"> UGC</p>
               </div>
 
               <input
@@ -97,7 +97,7 @@ export default function ContactUs() {
           <div>
             <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
               <div>
-                <p className="text-sm text-gray-700">موديلز</p>
+                <p className="text-sm text-gray-700">Model</p>
               </div>
 
               <input

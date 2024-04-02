@@ -54,7 +54,7 @@ const OurWork = ({ videos, title, subTitle }: Props) => {
             <video
               key={`video_${index}`}
               autoPlay
-              controls
+              // controls
               muted
               loop
               className=" aspect-[9/16] w-full max-w-96 rounded-lg  "

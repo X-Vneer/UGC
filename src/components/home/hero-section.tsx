@@ -51,7 +51,7 @@ function Hero({}: Props) {
               delay: 0.4,
               duration: 1,
             }}
-            className=" mb-8 text-[24px] font-bold leading-relaxed text-customBlack lg:text-[36px] xl:text-[48px]">
+            className=" mb-8 whitespace-nowrap text-[24px] font-bold leading-relaxed text-customBlack lg:text-[34px]   xl:text-[44px]">
             المنصة الاولى لصناع محتوى UGC
           </motion.h1>
           <motion.p
