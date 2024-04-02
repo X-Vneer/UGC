@@ -35,6 +35,7 @@ export default function ContactUs() {
       contentCreatorSex: "male",
       likedVideo: "",
       videoType: "homemade",
+      modalReservation: "1",
     },
   })
 
@@ -143,7 +144,10 @@ export default function ContactUs() {
 
         {watch("serviceType") === "campaign" ? (
           <div>
-            <p className="mb-2 font-medium text-gray-700">عدد المقاطع</p>
+            <p className="mb-2 font-medium text-gray-700">
+              عدد {watch("videosType") === "ugc" ? "المقاطع " : ""}
+            </p>
+
             <fieldset className="flex flex-wrap gap-3">
               <div>
                 <label className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:bg-secondary has-[:checked]:text-white">
@@ -221,7 +225,12 @@ export default function ContactUs() {
         ) : null}
 
         <div>
-          <p className="mb-2 font-medium text-gray-700">جنس صانع المحتوى</p>
+          {watch("videosType") === "ugc" ? (
+            <p className="mb-2 font-medium text-gray-700">جنس صانع المحتوى</p>
+          ) : (
+            <p className="mb-2 font-medium text-gray-700">الجنس</p>
+          )}
+
           <fieldset className="flex flex-wrap gap-3">
             <div>
               <label className="flex cursor-pointer items-center justify-center rounded-md border border-gray-100 bg-white px-3 py-2 text-gray-900 hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:bg-secondary has-[:checked]:text-white">
@@ -304,6 +313,47 @@ export default function ContactUs() {
         </fieldset>
         {errors.videoType?.message ? (
           <span className=" text-sm text-red-600">{errors.videoType.message}</span>
+        ) : null}
+        {watch("videosType") === "models" ? (
+          <>
+            <p className="mb-2  font-medium text-gray-700">نوع الحجز</p>
+            <fieldset className="grid grid-cols-2 gap-4">
+              <legend className="sr-only">نوع الحجز</legend>
+              <div>
+                <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <div>
+                    <p className="text-sm text-gray-700">جلسة تصوير مع مودل</p>
+                  </div>
+
+                  <input
+                    type="radio"
+                    {...register("modalReservation")}
+                    value="1"
+                    className="size-4 border-gray-300 text-secondary"
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <div>
+                    <p className="text-sm text-gray-700">مودل</p>
+                  </div>
+
+                  <input
+                    type="radio"
+                    {...register("modalReservation")}
+                    value="2"
+                    className="size-4 border-gray-300 text-secondary"
+                  />
+                </label>
+              </div>
+            </fieldset>
+            {errors.modalReservation?.message ? (
+              <span className=" text-sm text-red-600">
+                {errors.modalReservation.message}
+              </span>
+            ) : null}
+          </>
         ) : null}
 
         <Button isLoading={isSubmitting} className="w-full rounded-md" type="submit">

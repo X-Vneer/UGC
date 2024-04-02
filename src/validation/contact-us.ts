@@ -38,6 +38,7 @@ const ServiceInformationSchema = z
     likedVideo: z.string().optional(),
     videoType: z.enum(["homemade", "liveCoverage"]),
     contentCreatorSex: z.enum(["male", "female", "both"]),
+    modalReservation: z.enum(["1", "2"]).optional(),
   })
   .refine(
     (obj) => {
