@@ -104,7 +104,7 @@ export default function ContactUs() {
             نبذة مبسطة عن العلامة التجارية
           </label>
           <span className="text-[12px]  text-gray-500">
-            الرجاء كتابة نبذة مختصرة لا تقل عن 100 حرف
+            الرجاء كتابة نبذة مختصرة لا تقل عن 50 حرف
           </span>
 
           <textarea

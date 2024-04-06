@@ -61,7 +61,7 @@ const AboutUs = (props: Props) => {
               ايش ال UGC
             </h2>
             <p className="mb-4 text-[28px] font-bold leading-relaxed text-customBlack  lg:text-[36px] xl:text-[48px]">
-              User generated content
+              User Generated Content
             </p>
             <p className="text-[#7a7a7a] lg:text-lg">
               وهو أحدث أنواع التسويق بالمحتوى وهو المحتوى الحقيقي المصنوع من األشخاص

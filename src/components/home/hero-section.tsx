@@ -3,7 +3,7 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { logo } from "@/assets"
+import { logo, textLogo } from "@/assets"
 import { motion } from "framer-motion"
 
 import { Button } from "../ui/button"
@@ -36,9 +36,9 @@ function Hero({}: Props) {
               duration: 1,
             }}
             className="mb-4 text-center   text-secondary xl:text-lg ">
-            <Image src={logo} alt="logo" className="mx-auto w-10" />
+            <Image src={textLogo} alt="logo" className="mx-auto" />
           </motion.p>
-          <motion.h1
+          {/* <motion.h1
             initial={{
               y: 15,
               opacity: 0,
@@ -55,7 +55,7 @@ function Hero({}: Props) {
             }}
             className=" mb-8 whitespace-nowrap text-[24px] font-bold leading-relaxed text-customBlack lg:text-[34px]   xl:text-[44px]">
             المنصة الاولى لصناع محتوى UGC
-          </motion.h1>
+          </motion.h1> */}
           <motion.p
             initial={{
               y: 15,

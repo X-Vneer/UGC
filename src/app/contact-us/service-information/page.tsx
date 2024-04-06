@@ -30,6 +30,7 @@ export default function ContactUs() {
     resolver: zodResolver(ServiceInformationSchema),
     defaultValues: {
       videosType: "ugc",
+      numberOfModules: "1",
       serviceType: "campaign",
       numberOfVideos: "15",
       contentCreatorSex: "male",
@@ -55,8 +56,7 @@ export default function ContactUs() {
 
   const onSubmit = handleSubmit((data) => {
     console.log("🚀 ~ onSubmit ~ data:", data)
-    // updateFormData(data)
-    // Router.push("/contact-us/service-information")
+
     // TODO handle form submission
   })
 
@@ -77,76 +77,85 @@ export default function ContactUs() {
       </div>
 
       <form onSubmit={onSubmit} className="mt-5 space-y-5" noValidate>
-        <p className="mb-2  font-medium text-gray-700">نوع الخدمة</p>
+        <div>
+          <p className="mb-2  font-medium text-gray-700">نوع الخدمة</p>
 
-        <fieldset className="grid grid-cols-2 gap-4">
-          <legend className="sr-only">نوع الخدمة</legend>
+          <fieldset className="grid grid-cols-2 gap-4">
+            <legend className="sr-only">نوع الخدمة</legend>
+            <div>
+              <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                <div>
+                  <p className="text-sm text-gray-700"> UGC</p>
+                </div>
+
+                <input
+                  type="radio"
+                  {...register("videosType")}
+                  value="ugc"
+                  className="size-4 border-gray-300 text-secondary"
+                />
+              </label>
+            </div>
+            <div>
+              <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                <div>
+                  <p className="text-sm text-gray-700">Model</p>
+                </div>
+
+                <input
+                  type="radio"
+                  {...register("videosType")}
+                  value="models"
+                  className="size-4 border-gray-300 text-secondary"
+                />
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        {watch("videosType") === "models" ? null : (
           <div>
-            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+            <fieldset className="grid grid-cols-2 gap-4">
+              <legend className="sr-only">نوع الحملة</legend>
               <div>
-                <p className="text-sm text-gray-700"> UGC</p>
-              </div>
+                <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <div>
+                    <p className="text-sm text-gray-700">حملة</p>
+                  </div>
 
-              <input
-                type="radio"
-                {...register("videosType")}
-                value="ugc"
-                className="size-4 border-gray-300 text-secondary"
-              />
-            </label>
-          </div>
-          <div>
-            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <input
+                    type="radio"
+                    {...register("serviceType")}
+                    value="campaign"
+                    className="size-4 border-gray-300 text-secondary"
+                  />
+                </label>
+              </div>
               <div>
-                <p className="text-sm text-gray-700">Model</p>
+                <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <div>
+                    <p className="text-sm text-gray-700">فيديو</p>
+                  </div>
+
+                  <input
+                    type="radio"
+                    {...register("serviceType")}
+                    value="video"
+                    className="size-4 border-gray-300 text-secondary"
+                  />
+                </label>
               </div>
-
-              <input
-                type="radio"
-                {...register("videosType")}
-                value="models"
-                className="size-4 border-gray-300 text-secondary"
-              />
-            </label>
+            </fieldset>
+            {errors.serviceType?.message ? (
+              <span className=" text-sm text-red-600">
+                {errors.serviceType.message}
+              </span>
+            ) : null}
           </div>
-        </fieldset>
-        <fieldset className="grid grid-cols-2 gap-4">
-          <legend className="sr-only">نوع الحملة</legend>
-          <div>
-            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
-              <div>
-                <p className="text-sm text-gray-700">حملة</p>
-              </div>
+        )}
 
-              <input
-                type="radio"
-                {...register("serviceType")}
-                value="campaign"
-                className="size-4 border-gray-300 text-secondary"
-              />
-            </label>
-          </div>
+        {watch("videosType") === "ugc" && watch("serviceType") === "campaign" ? (
           <div>
-            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
-              <div>
-                <p className="text-sm text-gray-700">فيديو</p>
-              </div>
-
-              <input
-                type="radio"
-                {...register("serviceType")}
-                value="video"
-                className="size-4 border-gray-300 text-secondary"
-              />
-            </label>
-          </div>
-        </fieldset>
-
-        {watch("serviceType") === "campaign" ? (
-          <div>
-            <p className="mb-2 font-medium text-gray-700">
-              عدد {watch("videosType") === "ugc" ? "المقاطع " : ""}
-            </p>
+            <p className="mb-2 font-medium text-gray-700">عددالمقاطع</p>
 
             <fieldset className="flex flex-wrap gap-3">
               <div>
@@ -201,10 +210,37 @@ export default function ContactUs() {
                 </label>
               </div>
             </fieldset>
+            {errors.numberOfVideos?.message ? (
+              <span className=" text-sm text-red-600">
+                {errors.numberOfVideos.message}
+              </span>
+            ) : null}
           </div>
         ) : null}
-        {errors.serviceType?.message ? (
-          <span className=" text-sm text-red-600">{errors.serviceType.message}</span>
+
+        {watch("videosType") === "models" ? (
+          <div>
+            <Controller
+              control={control}
+              name="numberOfModules"
+              render={({ field }) => {
+                return (
+                  <Input
+                    error={errors.likedVideo}
+                    placeholder="العدد"
+                    {...field}
+                    required
+                    label="عدد الموديلز"
+                  />
+                )
+              }}
+            />
+            {errors.numberOfModules?.message ? (
+              <span className=" text-sm text-red-600">
+                {errors.numberOfModules.message}
+              </span>
+            ) : null}
+          </div>
         ) : null}
         {watch("videosType") === "ugc" ? (
           <Controller
@@ -271,51 +307,15 @@ export default function ContactUs() {
               </label>
             </div>
           </fieldset>
+          {errors.contentCreatorSex?.message ? (
+            <span className=" text-sm text-red-600">
+              {errors.contentCreatorSex.message}
+            </span>
+          ) : null}
         </div>
-        {errors.contentCreatorSex?.message ? (
-          <span className=" text-sm text-red-600">
-            {errors.contentCreatorSex.message}
-          </span>
-        ) : null}
 
-        <p className="mb-2  font-medium text-gray-700">نوع الفديو</p>
-
-        <fieldset className="grid grid-cols-2 gap-4">
-          <legend className="sr-only">نوع الفديو</legend>
-          <div>
-            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
-              <div>
-                <p className="text-sm text-gray-700">منتج تصوير منزلي</p>
-              </div>
-
-              <input
-                type="radio"
-                {...register("videoType")}
-                value="homemade"
-                className="size-4 border-gray-300 text-secondary"
-              />
-            </label>
-          </div>
-          <div>
-            <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
-              <div>
-                <p className="text-sm text-gray-700">تغطية حية</p>
-              </div>
-
-              <input
-                type="radio"
-                {...register("videoType")}
-                value="liveCoverage"
-                className="size-4 border-gray-300 text-secondary"
-              />
-            </label>
-          </div>
-        </fieldset>
-        {errors.videoType?.message ? (
-          <span className=" text-sm text-red-600">{errors.videoType.message}</span>
-        ) : null}
         {watch("videosType") === "models" ? (
-          <>
+          <div>
             <p className="mb-2  font-medium text-gray-700">نوع الحجز</p>
             <fieldset className="grid grid-cols-2 gap-4">
               <legend className="sr-only">نوع الحجز</legend>
@@ -336,7 +336,7 @@ export default function ContactUs() {
               <div>
                 <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
                   <div>
-                    <p className="text-sm text-gray-700">مودل</p>
+                    <p className="text-sm text-gray-700"> مودل فقط</p>
                   </div>
 
                   <input
@@ -353,8 +353,49 @@ export default function ContactUs() {
                 {errors.modalReservation.message}
               </span>
             ) : null}
-          </>
-        ) : null}
+          </div>
+        ) : (
+          <div>
+            <p className="mb-2  font-medium text-gray-700">نوع الفديو</p>
+
+            <fieldset className="grid grid-cols-2 gap-4">
+              <legend className="sr-only">نوع الفديو</legend>
+              <div>
+                <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <div>
+                    <p className="text-sm text-gray-700">منتج تصوير منزلي</p>
+                  </div>
+
+                  <input
+                    type="radio"
+                    {...register("videoType")}
+                    value="homemade"
+                    className="size-4 border-gray-300 text-secondary"
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="flex cursor-pointer justify-between gap-3 rounded-lg border border-gray-100 bg-white p-3 text-sm font-medium shadow-sm hover:border-gray-200 has-[:checked]:border-secondary has-[:checked]:ring-1 has-[:checked]:ring-secondary">
+                  <div>
+                    <p className="text-sm text-gray-700">تغطية حية</p>
+                  </div>
+
+                  <input
+                    type="radio"
+                    {...register("videoType")}
+                    value="liveCoverage"
+                    className="size-4 border-gray-300 text-secondary"
+                  />
+                </label>
+              </div>
+            </fieldset>
+            {errors.videoType?.message ? (
+              <span className=" text-sm text-red-600">
+                {errors.videoType.message}
+              </span>
+            ) : null}
+          </div>
+        )}
 
         <Button isLoading={isSubmitting} className="w-full rounded-md" type="submit">
           اطلب الخدمة

@@ -14,7 +14,7 @@ const Footer = (props: Props) => {
           </Link>
 
           <p className="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
-            Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+            &copy; {new Date().getFullYear()} .UGCHUB جميع الحقوق محفوظة لمنصة
           </p>
         </div>
       </div>

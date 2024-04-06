@@ -7,6 +7,7 @@ import brand4 from "./lADY CARE.png"
 import logo from "./logo.png"
 import brand5 from "./musk.png"
 import brand2 from "./Nail Spa.png"
+import textLogo from './FullLogo.png'
 
 export {
   iconsBg,
@@ -18,4 +19,5 @@ export {
   brand3,
   brand4,
   brand5,
+  textLogo
 }
