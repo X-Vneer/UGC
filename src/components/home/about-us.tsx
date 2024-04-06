@@ -35,6 +35,7 @@ const AboutUs = (props: Props) => {
                   autoPlay
                   muted
                   loop
+                  playsInline
                   className=" h-full w-full object-cover"
                   preload="none">
                   <source src="/VID-20240330-WA0003.mp4" type="video/mp4" />

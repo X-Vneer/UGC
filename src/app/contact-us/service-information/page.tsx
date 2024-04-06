@@ -226,20 +226,15 @@ export default function ContactUs() {
               render={({ field }) => {
                 return (
                   <Input
-                    error={errors.likedVideo}
+                    error={errors.numberOfModules}
                     placeholder="العدد"
                     {...field}
                     required
-                    label="عدد الموديلز"
+                    label="العدد"
                   />
                 )
               }}
             />
-            {errors.numberOfModules?.message ? (
-              <span className=" text-sm text-red-600">
-                {errors.numberOfModules.message}
-              </span>
-            ) : null}
           </div>
         ) : null}
         {watch("videosType") === "ugc" ? (

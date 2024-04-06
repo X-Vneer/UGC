@@ -33,6 +33,7 @@ const Layout = ({ children }: Props) => {
             <div className=" absolute top-[140px] z-10  aspect-[3/4] w-full  max-w-sm translate-x-14 overflow-hidden rounded-xl xl:translate-x-32">
               <video
                 autoPlay
+                playsInline
                 muted
                 loop
                 className=" h-full w-full object-cover"
