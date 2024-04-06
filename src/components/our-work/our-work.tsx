@@ -55,6 +55,7 @@ const OurWork = ({ videos, title, subTitle }: Props) => {
               key={`video_${index}`}
               autoPlay
               // controls
+              poster=""
               playsInline
               controls={false}
               muted

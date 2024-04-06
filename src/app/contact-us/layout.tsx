@@ -36,6 +36,7 @@ const Layout = ({ children }: Props) => {
                 playsInline
                 muted
                 loop
+                poster=""
                 className=" h-full w-full object-cover"
                 preload="none">
                 <source src="/models2.mp4" type="video/mp4" />

@@ -32,6 +32,7 @@ const AboutUs = (props: Props) => {
                 }}
                 className="about-us-background absolute inset-y-0 top-0 aspect-square w-full overflow-hidden rounded-3xl">
                 <video
+                  poster=""
                   autoPlay
                   muted
                   loop
