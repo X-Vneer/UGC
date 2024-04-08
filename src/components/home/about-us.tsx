@@ -72,7 +72,7 @@ const AboutUs = (props: Props) => {
             </p>
             <div className=" mt-8 grid grid-cols-2 gap-y-3  text-center">
               <div>
-                <p>ليه تحتاج الـUGC لعالمتك التجارية ؟</p>
+                <p>ليه تحتاج الـUGC لعلامتك التجارية ؟</p>
                 <span className="block   text-3xl font-bold  text-customBlack ">
                   93%
                 </span>
@@ -92,7 +92,7 @@ const AboutUs = (props: Props) => {
                   <br />
                   يؤثر على قرار الشراء
                   <br />
-                  أكثر من إعالنات التقليدية
+                  أكثر من الإعلانات التقليدية
                 </span>
               </div>
             </div>

@@ -8,7 +8,7 @@ import Footer from "@/components/footer"
 const cairo = Cairo({ subsets: ["latin"], weight: ["400", "500", "700"] })
 
 export const metadata: Metadata = {
-  title: "UGC",
+  title: "UGCHUB",
   description:
     "إذا تدور عن صناع محتوى مبدعين لتصوير الإعلانات او أفكار ابداعية لإدارة حملتك الإعلانية إنت وصلت!",
 }

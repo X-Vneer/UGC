@@ -1,7 +1,17 @@
 "use client"
 
 import React, { useRef } from "react"
-import { brand1, brand2, brand3, brand4, brand5 } from "@/assets"
+import {
+  brand1,
+  brand2,
+  brand3,
+  brand4,
+  brand5,
+  brand6,
+  brand7,
+  brand8,
+  brand9,
+} from "@/assets"
 import { motion, useInView } from "framer-motion"
 
 type Props = {}
@@ -10,7 +20,17 @@ const Brands = (props: Props) => {
   const containerRef = useRef<React.ElementRef<"section">>(null)
   const isInView = useInView(containerRef)
 
-  const bransLogo = [brand1, brand2, brand3, brand4, brand5]
+  const bransLogo = [
+    brand1,
+    brand2,
+    brand3,
+    brand4,
+    brand5,
+    brand6,
+    brand7,
+    brand8,
+    brand9,
+  ]
   return (
     <section ref={containerRef} className="py-10">
       <div className="container">
@@ -36,7 +56,7 @@ const Brands = (props: Props) => {
           className="mb-4 text-center  text-secondary xl:text-lg ">
           عملائنا
         </motion.p>
-        <div className="flex items-center justify-center gap-3 max-md:flex-wrap ">
+        <div className="flex flex-wrap items-center justify-center gap-3 ">
           {bransLogo.map((e, i) => {
             return (
               <motion.img
