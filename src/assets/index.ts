@@ -7,15 +7,12 @@ import brand5 from "./brand5.jpeg"
 import brand6 from "./brand6.jpeg"
 import brand7 from "./brand7.png"
 import brand8 from "./brand8.png"
-import brand9 from "./brand9.png"
-import cornerIcons from "./corner-icons-bg.png"
 import textLogo from "./FullLogo.png"
 import iconsBg from "./icons-background.png"
 import logo from "./logo.png"
 
 export {
   iconsBg,
-  cornerIcons,
   logo,
   blogger,
   textLogo,
@@ -27,5 +24,4 @@ export {
   brand6,
   brand7,
   brand8,
-  brand9,
 }

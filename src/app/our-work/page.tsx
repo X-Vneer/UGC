@@ -8,13 +8,13 @@ type Props = {}
 
 const Page = (props: Props) => {
   const videos = [
+    "/models1.mp4",
     "/video1.mp4",
     "/video2.mp4",
     "/video3.mp4",
     "/video4.mp4",
     "/video5.mp4",
     "/video6.mp4",
-    "/models1.mp4",
     "/models2.mp4",
     "/models3.mp4",
   ]

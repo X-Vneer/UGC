@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useRef } from "react"
-import { cornerIcons } from "@/assets"
 import { motion } from "framer-motion"
 
 type Props = {}

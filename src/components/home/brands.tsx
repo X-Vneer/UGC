@@ -10,7 +10,6 @@ import {
   brand6,
   brand7,
   brand8,
-  brand9,
 } from "@/assets"
 import { motion, useInView } from "framer-motion"
 
@@ -20,17 +19,7 @@ const Brands = (props: Props) => {
   const containerRef = useRef<React.ElementRef<"section">>(null)
   const isInView = useInView(containerRef)
 
-  const bransLogo = [
-    brand1,
-    brand2,
-    brand3,
-    brand4,
-    brand5,
-    brand6,
-    brand7,
-    brand8,
-    brand9,
-  ]
+  const bransLogo = [brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8]
   return (
     <section ref={containerRef} className="py-10">
       <div className="container">
