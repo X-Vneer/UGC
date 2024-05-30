@@ -42,6 +42,7 @@ export default function ContactUs() {
 
   const Router = useRouter()
   const { formData } = useFormContext()
+  const { updateFormData } = useFormContext()
   useEffect(() => {
     if (
       !PersonalDataSchema.merge(BrandInformationSchema).safeParse(formData).success
@@ -55,9 +56,8 @@ export default function ContactUs() {
   }, [Router, formData])
 
   const onSubmit = handleSubmit((data) => {
-    console.log("🚀 ~ onSubmit ~ data:", data)
-
-    // TODO handle form submission
+    updateFormData(data)
+    Router.push("/contact-us/payment")
   })
 
   return (
@@ -71,7 +71,7 @@ export default function ContactUs() {
 
       <div className=" my-5">
         <Stepper
-          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة "]}
+          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة ", "الدفع"]}
           activeStep={3}
         />
       </div>

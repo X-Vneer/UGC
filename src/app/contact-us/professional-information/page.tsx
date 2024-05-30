@@ -59,7 +59,7 @@ export default function ContactUs() {
 
       <div className=" my-5">
         <Stepper
-          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة "]}
+          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة ", "الدفع"]}
           activeStep={2}
         />
       </div>

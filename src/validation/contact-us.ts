@@ -41,37 +41,25 @@ const ServiceInformationSchema = z
     contentCreatorSex: z.enum(["male", "female", "both"]),
     modalReservation: z.enum(["1", "2"]).optional(),
   })
+  .refine((obj) => obj.serviceType === "video" || !!obj.numberOfVideos, {
+    message: "يرجى اختيار عدد الفديوهات المطلوبة",
+    path: ["numberOfVideos"],
+  })
   .refine(
-    (obj) => {
-      if (obj.serviceType === "campaign") {
-        return !!obj.numberOfVideos
-      }
-      return true
-    },
+    (obj) =>
+      obj.videosType === "ugc"
+        ? z.string().url().safeParse(obj.likedVideo).success
+        : true,
     {
-      message: "يرجى اختيار عدد الفديوهات المطلوبة",
-      path: ["numberOfVideos"],
-    },
-  )
-  .refine(
-    (obj) => {
-      if (obj.videosType === "ugc") {
-        return z.string().url().safeParse(obj.likedVideo).success
-      }
-      return true
-    },
-    {
-      message: " !رابط غير صالح",
+      message: "رابط غير صالح!",
       path: ["likedVideo"],
     },
   )
   .refine(
-    (obj) => {
-      if (obj.videosType === "models") {
-        return z.string().regex(/^\d+$/).safeParse(obj.numberOfModules).success
-      }
-      return true
-    },
+    (obj) =>
+      obj.videosType === "models"
+        ? z.string().regex(/^\d+$/).safeParse(obj.numberOfModules).success
+        : true,
     {
       message: "الرجاء اختيار عدد صالح",
       path: ["numberOfModules"],
