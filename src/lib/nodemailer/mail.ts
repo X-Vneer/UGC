@@ -4,7 +4,7 @@ import { z } from "zod"
 
 import { compileTemplate } from "../handlebars/complieTemplate"
 
-export async function sendMail(args: z.infer<typeof data> & { to: string }) {
+export async function sendMail(args: z.infer<typeof data>) {
   // env
   const { SMIP_MAIL, SMIP_PASSWORD } = process.env
   if (!SMIP_MAIL) throw new Error("Missing SMIP_MAIL env")
@@ -25,7 +25,7 @@ export async function sendMail(args: z.infer<typeof data> & { to: string }) {
   // sending mails
   const sendMail = await transport.sendMail({
     from: SMIP_MAIL,
-    to: args.to,
+    to: SMIP_MAIL,
     subject: "طلب خدمة",
     html: htmlBody,
   })

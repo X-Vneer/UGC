@@ -9,6 +9,7 @@ import {
 } from "@/validation/contact-us"
 import { DevTool } from "@hookform/devtools"
 import { zodResolver } from "@hookform/resolvers/zod"
+import axios from "axios"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
@@ -57,9 +58,10 @@ const ContactUs: React.FC = () => {
     }
   }, [Router, formData])
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     updateFormData(data)
-    Router.push("/contact-us/payment")
+    const response = await axios.post("/api/create-order", { ...formData, ...data })
+    // Router.push("/contact-us/payment")
   })
 
   return (
