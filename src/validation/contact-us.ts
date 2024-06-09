@@ -66,4 +66,8 @@ const ServiceInformationSchema = z
     },
   )
 
-export { PersonalDataSchema, BrandInformationSchema, ServiceInformationSchema }
+const data = PersonalDataSchema.and(BrandInformationSchema).and(
+  ServiceInformationSchema,
+)
+
+export { PersonalDataSchema, BrandInformationSchema, ServiceInformationSchema, data }

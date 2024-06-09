@@ -66,13 +66,13 @@ export default function ContactUs({
 }) {
   const Router = useRouter()
   const { formData } = useFormContext()
+  console.log("🚀 ~ formData:", formData)
   useEffect(() => {
     if (
       !PersonalDataSchema.merge(BrandInformationSchema)
         .and(ServiceInformationSchema)
         .safeParse(formData).success
     ) {
-      console.log("بيانات غير صحيحة")
       setTimeout(() => {
         toast.error("بيانات غير صحيحة")
       }, 1)
@@ -96,7 +96,6 @@ export default function ContactUs({
 
   const status = searchParams.status
   let message = searchParams.message
-  console.log("🚀 ~ message:", message)
   if (status == "paid")
     message =
       "عملية الدفع تمت بنجاح. سيتم التواصل معك من قبل ادارة Trend UGC في اقرب وقت ممكن"

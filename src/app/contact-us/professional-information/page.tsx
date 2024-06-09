@@ -34,9 +34,7 @@ export default function ContactUs() {
   const Router = useRouter()
   const { formData } = useFormContext()
   useEffect(() => {
-    console.log("🚀 ~ ContactUs ~ formData:", formData)
     if (!PersonalDataSchema.safeParse(formData).success) {
-      console.log("بيانات غير صحيحة")
       setTimeout(() => {
         toast.error("بيانات غير صحيحة")
       }, 1)
@@ -45,7 +43,6 @@ export default function ContactUs() {
   }, [Router, formData])
 
   const onSubmit = handleSubmit((data) => {
-    console.log("🚀 ~ onSubmit ~ data:", data)
     updateFormData(data)
     Router.push("/contact-us/service-information")
   })

@@ -32,7 +32,6 @@ export default function ContactUs() {
   const Router = useRouter()
 
   const onSubmit = handleSubmit((data) => {
-    console.log("🚀 ~ onSubmit ~ data:", data)
     updateFormData(data)
     Router.push("/contact-us/professional-information")
   })
