@@ -20,6 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.moyasar.com/mpf/1.13.0/moyasar.css"
+        />
+      </head>
       <body className={cairo.className + " left-0 right-0 top-0 overflow-y-scroll"}>
         {children}
         <Footer />
