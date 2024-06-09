@@ -310,7 +310,7 @@ export default function ContactUs() {
         </div>
 
         {watch("videosType") === "models" ? (
-          <div>
+          <div key={"modalReservation"}>
             <p className="mb-2  font-medium text-gray-700">نوع الحجز</p>
             <fieldset className="grid grid-cols-2 gap-4">
               <legend className="sr-only">نوع الحجز</legend>
@@ -350,7 +350,7 @@ export default function ContactUs() {
             ) : null}
           </div>
         ) : (
-          <div>
+          <div key={"videoType"}>
             <p className="mb-2  font-medium text-gray-700">نوع الفديو</p>
 
             <fieldset className="grid grid-cols-2 gap-4">
