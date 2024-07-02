@@ -59,9 +59,10 @@ const ContactUs: React.FC = () => {
   }, [Router, formData])
 
   const onSubmit = handleSubmit(async (data) => {
+    console.log("🚀 ~ onSubmit ~ data:", data)
     updateFormData(data)
-    const response = await axios.post("/api/create-order", { ...formData, ...data })
-    // Router.push("/contact-us/payment")
+    await axios.post("/api/create-order", { ...formData, ...data })
+    Router.push("/contact-us/payment")
   })
 
   return (

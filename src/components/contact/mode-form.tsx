@@ -19,15 +19,6 @@ const ModelsForm: React.FC<ModelsFormProps> = ({ control, register, errors }) =>
       placeholder="العدد"
       errors={errors}
     />
-    <RadioGroup
-      name="modalReservation"
-      options={[
-        { label: "جلسة تصوير مع مودل", value: "1" },
-        { label: "مودل فقط", value: "2" },
-      ]}
-      register={register}
-      errors={errors}
-    />
   </>
 )
 

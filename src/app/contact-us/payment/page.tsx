@@ -8,7 +8,6 @@ import {
   PersonalDataSchema,
   ServiceInformationSchema,
 } from "@/validation/contact-us"
-import axios, { AxiosRequestConfig } from "axios"
 import { toast } from "sonner"
 
 // import PayPalButton from "@/components/ui/paypal-buttons"
@@ -64,10 +63,13 @@ export default function ContactUs({
 }: {
   searchParams: { [key: string]: string }
 }) {
+  const status = searchParams.status
+  let message = searchParams.message
   const Router = useRouter()
   const { formData } = useFormContext()
-  console.log("🚀 ~ formData:", formData)
   useEffect(() => {
+    if (status) return
+
     if (
       !PersonalDataSchema.merge(BrandInformationSchema)
         .and(ServiceInformationSchema)
@@ -78,15 +80,16 @@ export default function ContactUs({
       }, 1)
       Router.replace("/contact-us/personal-details")
     }
-  }, [Router, formData])
+  }, [Router, formData, status])
 
   const initMoyasar = () => {
+    console.log("loaded")
     if (typeof window !== "undefined" && window.Moyasar) {
       window.Moyasar.init({
         element: ".mysr-form",
         amount: 10000,
         currency: "SAR",
-        description: "Coffee Order #1",
+        description: "Main order #1",
         publishable_api_key: "pk_test_FDYvD7Gi9DKzDa2TJUFV8XcF7Qo6zuBBJkb4crMN",
         callback_url: "http://localhost:3000/contact-us/payment",
         methods: ["creditcard"],
@@ -94,14 +97,24 @@ export default function ContactUs({
     }
   }
 
-  const status = searchParams.status
-  let message = searchParams.message
   if (status == "paid")
     message =
       "عملية الدفع تمت بنجاح. سيتم التواصل معك من قبل ادارة Trend UGC في اقرب وقت ممكن"
   if (status === "failed")
     message = errorMessages[message as keyof typeof errorMessages]
 
+  useEffect(() => {
+    let timer = setInterval(() => {
+      initMoyasar()
+      if (typeof window !== "undefined" && window.Moyasar) {
+        clearInterval(timer)
+      }
+    }, 1000)
+
+    return () => {
+      clearInterval(timer)
+    }
+  }, [])
   return (
     <>
       <Script
