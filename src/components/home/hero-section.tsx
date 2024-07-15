@@ -36,7 +36,7 @@ function Hero({}: Props) {
               duration: 1,
             }}
             className="mb-4 text-center   text-secondary xl:text-lg ">
-            <Image src={textLogo} alt="logo" className="mx-auto" />
+            <Image src={textLogo} alt="logo" className="mx-auto  " />
           </motion.p>
           {/* <motion.h1
             initial={{
