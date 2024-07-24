@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import Link from "next/link"
 import { logo } from "@/assets"
@@ -14,7 +15,7 @@ const Footer = (props: Props) => {
           </Link>
 
           <p className="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
-            &copy; {new Date().getFullYear()} .UGCHUB جميع الحقوق محفوظة لمنصة
+            &copy; {new Date().getFullYear()} .Saudi Media جميع الحقوق محفوظة لمنصة
           </p>
         </div>
       </div>
