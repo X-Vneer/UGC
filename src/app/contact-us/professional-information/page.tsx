@@ -49,14 +49,14 @@ export default function ContactUs() {
 
   return (
     <div>
-      <div className="max-md:text-center">
+      {/* <div className="max-md:text-center">
         <h1 className="text-3xl font-semibold  leading-loose">كن ترند الان</h1>
         <p className=" font-medium text-gray-500">معلوامت العلامة التجارية تهمنا </p>
-      </div>
+      </div> */}
 
       <div className=" my-5">
         <Stepper
-          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة ", "الدفع"]}
+          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة "]}
           activeStep={2}
         />
       </div>

@@ -10,6 +10,7 @@ import {
 import { DevTool } from "@hookform/devtools"
 import { zodResolver } from "@hookform/resolvers/zod"
 import axios from "axios"
+import { Loader2 } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
@@ -25,10 +26,11 @@ import { useFormContext } from "../context/context"
 const ContactUs: React.FC = () => {
   const {
     watch,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitted },
     handleSubmit,
     control,
     register,
+    setError,
   } = useForm<ServiceInformationType>({
     resolver: zodResolver(ServiceInformationSchema),
     defaultValues: {
@@ -59,24 +61,31 @@ const ContactUs: React.FC = () => {
   }, [Router, formData])
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log("🚀 ~ onSubmit ~ data:", data)
-    updateFormData(data)
-    await axios.post("/api/create-order", { ...formData, ...data })
-    Router.push("/contact-us/payment")
+    // console.log("🚀 ~ onSubmit ~ data:", data)
+    // updateFormData(data)
+    try {
+      await axios.post("/api/create-order", { ...formData, ...data })
+      toast.success("تم ارسال الطلب بنجاح")
+      toast.success("سيتم التواصل معك في اقرب وقت ممكن")
+    } catch (error) {
+      console.log("🚀 ~ onSubmit ~ error:", error)
+      setError("root", { message: "العملية فشلت, الرجاء المحاولة مجددا" })
+    }
+    // Router.push("/contact-us/payment")
   })
 
   return (
     <div>
-      <div className="max-md:text-center">
+      {/* <div className="max-md:text-center">
         <h1 className="text-3xl font-semibold leading-loose">كن ترند الان</h1>
         <p className="font-medium text-gray-500">
           يمكنك اختيار تفاصيل الخدمة التي تحتاجها
         </p>
-      </div>
+      </div> */}
 
       <div className="my-5">
         <Stepper
-          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة ", "الدفع"]}
+          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة "]}
           activeStep={3}
         />
       </div>
@@ -151,9 +160,20 @@ const ContactUs: React.FC = () => {
           </div>
         )}
 
-        <Button isLoading={isSubmitting} className="w-full rounded-md" type="submit">
+        <Button
+          isLoading={isSubmitting}
+          className="flex w-full items-center justify-center gap-2 rounded-md"
+          type="submit">
+          {isSubmitting ? <Loader2 className=" animate-spin" /> : null}
           اطلب الخدمة
         </Button>
+        {isSubmitted ? (
+          <p className="text-center text-sm font-bold text-green-600">
+            تم استقبال طلبك بنجاح سيتم التواصل معك في اقرب وقت ممكن
+          </p>
+        ) : (
+          ""
+        )}
         {errors.root?.message && (
           <span className="text-sm text-red-600">{errors.root.message}</span>
         )}

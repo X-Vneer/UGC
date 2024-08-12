@@ -117,9 +117,9 @@ export default function ContactUs({
   }, [])
   return (
     <>
-      <Script
+      {/* <Script
         src="https://cdn.moyasar.com/mpf/1.13.0/moyasar.js"
-        onLoad={initMoyasar}></Script>
+        onLoad={initMoyasar}></Script> */}
 
       <div>
         <div className="max-md:text-center">

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { PersonalDataSchema } from "@/validation/contact-us"
 import { DevTool } from "@hookform/devtools"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { Loader2 } from "lucide-react"
 import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 
@@ -38,14 +39,14 @@ export default function ContactUs() {
 
   return (
     <div>
-      <div className="max-md:text-center">
+      {/* <div className="max-md:text-center">
         <h1 className="text-3xl font-semibold  leading-loose">خليك ترند</h1>
         <p className=" font-medium text-gray-500">معلوامات الاسم و التواصل</p>
-      </div>
+      </div> */}
 
       <div className=" my-5">
         <Stepper
-          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة ", "الدفع"]}
+          steps={[" بيانات شخصية ", "العلامة التجارية ", "نوع الخدمة "]}
           activeStep={1}
         />
       </div>
