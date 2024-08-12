@@ -30,6 +30,7 @@ const ContactUs: React.FC = () => {
     handleSubmit,
     control,
     register,
+    reset,
     setError,
   } = useForm<ServiceInformationType>({
     resolver: zodResolver(ServiceInformationSchema),
@@ -67,6 +68,7 @@ const ContactUs: React.FC = () => {
       await axios.post("/api/create-order", { ...formData, ...data })
       toast.success("تم ارسال الطلب بنجاح")
       toast.success("سيتم التواصل معك في اقرب وقت ممكن")
+      reset()
     } catch (error) {
       console.log("🚀 ~ onSubmit ~ error:", error)
       setError("root", { message: "العملية فشلت, الرجاء المحاولة مجددا" })
