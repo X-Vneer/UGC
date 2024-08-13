@@ -61,6 +61,8 @@ const ContactUs: React.FC = () => {
     }
   }, [Router, formData])
 
+
+
   const onSubmit = handleSubmit(async (data) => {
     // console.log("🚀 ~ onSubmit ~ data:", data)
     // updateFormData(data)
@@ -68,6 +70,7 @@ const ContactUs: React.FC = () => {
       await axios.post("/api/create-order", { ...formData, ...data })
       toast.success("تم ارسال الطلب بنجاح")
       toast.success("سيتم التواصل معك في اقرب وقت ممكن")
+      Router.push('/')
       reset()
     } catch (error) {
       console.log("🚀 ~ onSubmit ~ error:", error)
