@@ -1,4 +1,3 @@
-import blogger from "./blogger-influencer.jpg"
 import brand1 from "./brand1.jpeg"
 import brand2 from "./brand2.jpeg"
 import brand3 from "./brand3.jpeg"
@@ -14,7 +13,6 @@ import logo from "./logo.png"
 export {
   iconsBg,
   logo,
-  blogger,
   textLogo,
   brand1,
   brand2,
