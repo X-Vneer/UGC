@@ -4,7 +4,7 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { logo, textLogo } from "@/assets"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 import { Button } from "../ui/button"
 
@@ -20,7 +20,7 @@ function Hero({}: Props) {
             perspective: "300px",
           }}
           className=" relative  z-[1] max-w-lg text-center leading-loose xl:max-w-xl">
-          <motion.p
+          <m.p
             initial={{
               y: 15,
               opacity: 0,
@@ -37,8 +37,8 @@ function Hero({}: Props) {
             }}
             className="mb-4 text-center   text-secondary xl:text-lg ">
             <Image src={textLogo} alt="logo" className="mx-auto  " />
-          </motion.p>
-          {/* <motion.h1
+          </m.p>
+          {/* <m.h1
             initial={{
               y: 15,
               opacity: 0,
@@ -55,8 +55,8 @@ function Hero({}: Props) {
             }}
             className=" mb-8 whitespace-nowrap text-[24px] font-bold leading-relaxed text-customBlack lg:text-[34px]   xl:text-[44px]">
             المنصة الاولى لصناع محتوى UGC
-          </motion.h1> */}
-          <motion.p
+          </m.h1> */}
+          <m.p
             initial={{
               y: 15,
               opacity: 0,
@@ -74,9 +74,9 @@ function Hero({}: Props) {
             className="mb-5 text-[#7a7a7a] max-lg:text-[15px] lg:text-lg">
             إذا تدور عن صناع محتوى مبدعين لتصوير الإعلانات او أفكار ابداعية لإدارة
             حملتك الإعلانية إنت وصلت!
-          </motion.p>
+          </m.p>
           <div className="flex items-center  justify-center gap-4">
-            <motion.div
+            <m.div
               initial={{
                 y: 15,
                 opacity: 0,
@@ -94,8 +94,8 @@ function Hero({}: Props) {
               <Button>
                 <Link href={"/contact-us"}>اطلب خدمتك</Link>
               </Button>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{
                 y: 15,
                 opacity: 0,
@@ -113,7 +113,7 @@ function Hero({}: Props) {
               <Button variant={"outline"}>
                 <Link href={"/our-work"}>أعمالنا</Link>
               </Button>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

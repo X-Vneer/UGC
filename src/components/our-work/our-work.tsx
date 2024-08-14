@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 type Props = {
   videos: string[]
@@ -12,7 +12,7 @@ type Props = {
 const OurWork = ({ videos, title, subTitle }: Props) => {
   return (
     <section className="min-h-screen py-10 text-center lg:py-20">
-      <motion.p
+      <m.p
         initial={{
           y: 15,
           opacity: 0,
@@ -29,8 +29,8 @@ const OurWork = ({ videos, title, subTitle }: Props) => {
         }}
         className="mb-4 text-center   text-secondary xl:text-lg ">
         {title}
-      </motion.p>
-      <motion.p
+      </m.p>
+      <m.p
         initial={{
           y: 15,
           opacity: 0,
@@ -47,7 +47,7 @@ const OurWork = ({ videos, title, subTitle }: Props) => {
         }}
         className=" mb-8 text-[24px] font-bold  leading-relaxed text-customBlack lg:text-[36px] xl:text-[48px]">
         {subTitle}
-      </motion.p>
+      </m.p>
       <div className="flex flex-wrap justify-center   gap-6 px-4 ">
         {videos.map((video, index) => {
           return (

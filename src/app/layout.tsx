@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google"
 
 import "./globals.css"
 
+import FramerMotion from "@/lib/framer-motion"
 import Footer from "@/components/footer"
 
 const cairo = Cairo({ subsets: ["latin"], weight: ["400", "500", "700"] })
@@ -20,15 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <head>
+      {/* <head>
         <link
           rel="stylesheet"
           href="https://cdn.moyasar.com/mpf/1.13.0/moyasar.css"
         />
-      </head>
+      </head> */}
       <body className={cairo.className + " left-0 right-0 top-0 overflow-y-scroll"}>
-        {children}
-        <Footer />
+        <FramerMotion>
+          {children}
+          <Footer />
+        </FramerMotion>
       </body>
     </html>
   )

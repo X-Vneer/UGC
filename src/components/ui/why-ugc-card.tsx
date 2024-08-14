@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 type Props = {
   index: number
@@ -9,7 +9,7 @@ type Props = {
 
 const WhyUGCCard = ({ index }: Props) => {
   return (
-    <motion.div
+    <m.div
       initial={{
         y: 20,
         opacity: 0,
@@ -31,11 +31,11 @@ const WhyUGCCard = ({ index }: Props) => {
       <p className="mb-2 text-[20px] font-bold leading-relaxed text-customBlack">
         عنوان صغير
       </p>
-      <p className="text-lightGray text-[15px] leading-relaxed">
+      <p className="text-[15px] leading-relaxed text-lightGray">
         هذا نص تجريبي فقط هذا نص تجريبي فقط يجب استبدال هذا النص بتص بديل يعادله ب
         الحج يزيد عنه بقليل او ينقص عنه بقليل
       </p>
-    </motion.div>
+    </m.div>
   )
 }
 

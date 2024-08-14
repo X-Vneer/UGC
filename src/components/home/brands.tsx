@@ -11,7 +11,7 @@ import {
   brand7,
   brand8,
 } from "@/assets"
-import { motion, useInView } from "framer-motion"
+import { m, useInView } from "framer-motion"
 
 type Props = {}
 
@@ -23,7 +23,7 @@ const Brands = (props: Props) => {
   return (
     <section ref={containerRef} className="py-10">
       <div className="container">
-        <motion.p
+        <m.p
           initial={{
             y: 15,
             opacity: 0,
@@ -44,11 +44,12 @@ const Brands = (props: Props) => {
           }}
           className="mb-4 text-center  text-secondary xl:text-lg ">
           عملائنا
-        </motion.p>
+        </m.p>
         <div className="flex flex-wrap items-center justify-center gap-3 ">
           {bransLogo.map((e, i) => {
             return (
-              <motion.img
+              <m.img
+                loading="lazy"
                 initial={{
                   y: 25,
                   opacity: 0,

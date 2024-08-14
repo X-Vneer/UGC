@@ -64,7 +64,6 @@ body {
   mix-blend-mode: darken;
 }
 .about-us-background {
-  background-image: url("../assets/blogger-influencer.jpg");
   background-size: cover;
   background-position: center center;
 }

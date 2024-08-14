@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useRef } from "react"
-import { motion } from "framer-motion"
+import React from "react"
+import { m } from "framer-motion"
 
 type Props = {}
 
@@ -12,7 +12,7 @@ const AboutUs = (props: Props) => {
         <div className="flex min-h-screen items-center gap-10 max-md:flex-col-reverse lg:gap-14">
           <div className="relative w-full p-5  md:w-1/2 ">
             <div className="relative aspect-square w-full">
-              <motion.div
+              <m.div
                 initial={{
                   y: 50,
                   opacity: 0,
@@ -41,10 +41,10 @@ const AboutUs = (props: Props) => {
                   <source src="/VID-20240330-WA0003.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              </motion.div>
+              </m.div>
             </div>
           </div>
-          <motion.div
+          <m.div
             initial={{
               opacity: 0,
               x: 10,
@@ -95,7 +95,7 @@ const AboutUs = (props: Props) => {
                 </span>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

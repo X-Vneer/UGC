@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Check } from "lucide-react"
 
 type Props = {}
@@ -17,7 +17,7 @@ const services = [
 const Card = ({ content, index }: { content: string; index: number }) => {
   return (
     <div className="relative p-3 pr-16">
-      <motion.span
+      <m.span
         initial={{
           y: 10,
           opacity: 0,
@@ -37,8 +37,8 @@ const Card = ({ content, index }: { content: string; index: number }) => {
         <span>
           <Check />
         </span>
-      </motion.span>
-      <motion.p
+      </m.span>
+      <m.p
         initial={{
           x: 10,
           opacity: 0,
@@ -53,7 +53,7 @@ const Card = ({ content, index }: { content: string; index: number }) => {
         }}
         className="text-[#7a7a7a]">
         {content}
-      </motion.p>
+      </m.p>
     </div>
   )
 }
