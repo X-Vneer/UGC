@@ -61,8 +61,6 @@ const ContactUs: React.FC = () => {
     }
   }, [Router, formData])
 
-
-
   const onSubmit = handleSubmit(async (data) => {
     // console.log("🚀 ~ onSubmit ~ data:", data)
     // updateFormData(data)
@@ -70,7 +68,7 @@ const ContactUs: React.FC = () => {
       await axios.post("/api/create-order", { ...formData, ...data })
       toast.success("تم ارسال الطلب بنجاح")
       toast.success("سيتم التواصل معك في اقرب وقت ممكن")
-      Router.push('/')
+      Router.push("/")
       reset()
     } catch (error) {
       console.log("🚀 ~ onSubmit ~ error:", error)
@@ -172,13 +170,13 @@ const ContactUs: React.FC = () => {
           {isSubmitting ? <Loader2 className=" animate-spin" /> : null}
           اطلب الخدمة
         </Button>
-        {isSubmitted ? (
+        {/* {isSubmitted && !errors.root?.message ? (
           <p className="text-center text-sm font-bold text-green-600">
             تم استقبال طلبك بنجاح سيتم التواصل معك في اقرب وقت ممكن
           </p>
         ) : (
           ""
-        )}
+        )} */}
         {errors.root?.message && (
           <span className="text-sm text-red-600">{errors.root.message}</span>
         )}

@@ -9,6 +9,7 @@ export const POST = async (request: Request) => {
     const body = await request.json()
 
     const parsedData = data.parse(body)
+    console.log("🚀 ~ POST ~ parsedData:", parsedData)
 
     await dbConnect()
     const order = await Order.create(parsedData)
